@@ -1,11 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useState} from 'react';
+import axios from 'axios'
 import './App.css';
 
 function App() {
+
+  const [todoList, settodoList] = useState([])
+  axios.get("/api/todos/").then(res=> settodoList(res.data) )
+
+  
+
   return (
     <div className="App">
-        Hi
+        {todoList.map(item =>(
+          <p>
+            {item.description}
+          </p>
+
+        ))}
     </div>
   );
 }
