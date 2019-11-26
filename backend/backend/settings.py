@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todo',
     'corsheaders',
-    'rest_framework'
+    'rest_framework',
+    'pagedown.apps.PagedownConfig'
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,6 @@ CORS_ORIGIN_WHITELIST = [
 'http://localhost:8000',
 'http://localhost:8080',
 ]
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
